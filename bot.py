@@ -8,7 +8,7 @@ from os import environ
 api_id = int(environ.get("API_ID"))
 api_hash = environ.get("API_HASH")
 group_id = int(environ.get("GROUP_ID"))
-phone_number = environ.get("+79287470906")  # Номер телефона
+phone_number = environ.get("PHONE_NUMBER")  # Номер телефона
 tracked_chats = [8068560344]  # Чаты для отслеживания
 
 # Создаем клиент
