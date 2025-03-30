@@ -8,11 +8,11 @@ from os import environ
 api_id = int(environ.get("API_ID"))
 api_hash = environ.get("API_HASH")
 group_id = int(environ.get("GROUP_ID"))
-phone_number = environ.get("PHONE_NUMBER")  # Номер телефона
+bot_token = environ.get("BOT_TOKEN")  # Токен бота
 tracked_chats = [8068560344]  # Чаты для отслеживания
 
-# Создаем клиент
-app = Client("my_account", api_id=api_id, api_hash=api_hash, phone_number=phone_number)
+# Создаем клиент с токеном
+app = Client("my_account", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
 # Настройка базы данных SQLite
 def setup_database():
