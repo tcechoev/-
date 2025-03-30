@@ -8,14 +8,15 @@ from os import environ
 api_id = int(environ.get("API_ID"))
 api_hash = environ.get("API_HASH")
 group_id = int(environ.get("GROUP_ID"))
+phone_number = environ.get("+79287470906")  # Номер телефона
 tracked_chats = [8068560344]  # Чаты для отслеживания
 
 # Создаем клиент
-app = Client("my_account", api_id=api_id, api_hash=api_hash)
+app = Client("my_account", api_id=api_id, api_hash=api_hash, phone_number=phone_number)
 
 # Настройка базы данных SQLite
 def setup_database():
-    conn = sqlite3.connect("messages.db")  # Относительный путь
+    conn = sqlite3.connect("messages.db")
     cursor = conn.cursor()
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS messages (
